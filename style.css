@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    background-image: url("./bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    gap: 0px;
+}
+body.host::after {
+    content: "जय हिन्द";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    font-size: 15vw;
+    opacity: 0.2;
+    mix-blend-mode: luminosity;
+}
+
+.bigcircle {
+    position: absolute;
+    height: 900px;
+    width: 900px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.2;
+    box-shadow: 0 0 20px 10px #00000017;
+    animation: chakrarotate 200s linear infinite;
+}
+
+.bigcircle > .spikes {
+    border: 2px solid #06038D;
+}
+
+.container {
+    width: fit-content;
+    height: 100%;
+    position: relative;
+    left: -100px;
+}
+
+.flag {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    position: absolute;
+    bottom: -200%;
+    z-index: 1;
+    transition: bottom 1s ease-in-out;
+}
+
+
+body.host .flag{
+    bottom: 66.5%;
+}
+
+.flag_light {
+    position: absolute;
+    background-color: #d4d4d43f;
+    width: 80px;
+    height: 100%;
+    z-index: 1;
+    mix-blend-mode: screen;
+    box-shadow: 0 0 20px 10px #d4d4d43f;
+    animation: movelight 8s linear infinite;
+}
+
+/* move lights */
+@keyframes movelight {
+    0% {
+        transform: skew(-30deg) translateX(-500%);
+    }
+
+    100% {
+        transform: skew(-30deg) translateX(500%);
+    }
+}
+
+.flag__saffron {
+    width: 100%;
+    height: 60px;
+    background-color: #FF671F;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
+    /* transform: skew(-30deg); */
+}
+
+.flag__white {
+    width: 100%;
+    height: 60px;
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* transform: skew(-30deg); */
+    position: relative;
+    z-index: 1;
+    padding: 1px;
+    box-shadow: inset 4px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chakra {
+    width: 58px;
+    height: 100%;
+    background-color: #fff;
+    border: 3px solid #06038D;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: chakrarotate 30s linear infinite;
+}
+
+.spikes {
+    width: 1px;
+    height: 100%;
+    background-color: #06038D;
+    position: absolute;
+}
+
+.s1 {
+    transform: rotate(0deg);
+}
+
+.s2 {
+    transform: rotate(15deg);
+}
+
+.s3 {
+    transform: rotate(30deg);
+}
+
+.s4 {
+    transform: rotate(45deg);
+}
+
+.s5 {
+    transform: rotate(60deg);
+}
+
+.s6 {
+    transform: rotate(75deg);
+}
+
+.s7 {
+    transform: rotate(90deg);
+}
+
+.s8 {
+    transform: rotate(105deg);
+}
+
+.s9 {
+    transform: rotate(120deg);
+}
+
+.s10 {
+    transform: rotate(135deg);
+}
+
+.s11 {
+    transform: rotate(150deg);
+}
+
+.s12 {
+    transform: rotate(165deg);
+}
+
+/* circle rotate */
+@keyframes chakrarotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.flag__green {
+    width: 100%;
+    height: 60px;
+    background-color: #046A38;
+    box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
+    /* transform: skew(-30deg); */
+}
+
+/* pole */ 
+
+.pole {
+    width: 9px;
+    height: 600px;
+    background-color: #000000eb;
+    position: absolute;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    left: 0px !important;
+    top: 0;
+    z-index: 10;
+}
+
+.pole_top {
+    width: 120%;
+    height: 20px;
+    background-color: #000000;
+    border-bottom: 2px solid #fff;
+    position: absolute;
+    top: -8px;
+    left: -1px;
+    border-radius: 50% 50% 0 0; 
+}
+
+.army {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* bottom */
+
+.bottom {
+    width: 100%;
+    height: 100px;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+}
+
+.bottom > h1 {
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.bottom > h1:first-child {
+    font-size: 30px !important;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ff5506;
+}
+
+.bottom > h1:last-child {
+    font-size: 30px !important;
+    font-weight: 800;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #03e678;
+}
